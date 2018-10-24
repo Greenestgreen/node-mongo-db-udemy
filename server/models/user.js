@@ -57,7 +57,7 @@ var UserSchema = new mongoose.Schema({
   UserSchema.statics.findByToken = function (token) {
     var User = this;
     var decoded;
-    console.log("1");
+
     try {
 
       decoded = jwt.verify(token, 'abc123');
@@ -65,7 +65,6 @@ var UserSchema = new mongoose.Schema({
       // return new Promise((resolve, reject) => {
       //   reject();
       // });
-      console.log("1");
       return Promise.reject();
     }
 
